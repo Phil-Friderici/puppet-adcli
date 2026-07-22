@@ -3,11 +3,13 @@ describe 'adcli' do
   describe 'on RedHat 6.7' do
     let(:facts) do
       {
-        osfamily: 'RedHat',
-        operatingsystemrelease: '6.7',
-        operatingsystemmajrelease: '6',
-        rubyversion: '1.9.3',
-        osname: 'CentOS',
+        os: {
+          'family' => 'RedHat',
+          'release' => {
+            'full'  => '6.7',
+            'major' => '6',
+          },
+        },
       }
     end
     let(:params) do
@@ -35,10 +37,13 @@ describe 'adcli' do
   describe 'on RedHat 7.2' do
     let(:facts) do
       {
-        osfamily: 'RedHat',
-        operatingsystemrelease: '7.2',
-        operatingsystemmajrelease: '7',
-        rubyversion: '1.9.3',
+        os: {
+          'family' => 'RedHat',
+          'release' => {
+            'full'  => '7.2',
+            'major' => '7',
+          },
+        },
       }
     end
     let(:params) do
@@ -66,10 +71,13 @@ describe 'adcli' do
   describe 'on RedHat 7.6' do
     let(:facts) do
       {
-        osfamily: 'RedHat',
-        operatingsystemrelease: '7.6',
-        operatingsystemmajrelease: '7',
-        rubyversion: '1.9.3',
+        os: {
+          'family' => 'RedHat',
+          'release' => {
+            'full'  => '7.6',
+            'major' => '7',
+          },
+        },
       }
     end
     let(:params) do
@@ -97,10 +105,13 @@ describe 'adcli' do
   describe 'on RedHat 6.7' do
     let(:facts) do
       {
-        osfamily: 'RedHat',
-        operatingsystemrelease: '6.7',
-        operatingsystemmajrelease: '6',
-        rubyversion: '1.9.3',
+        os: {
+          'family' => 'RedHat',
+          'release' => {
+            'full'  => '6.7',
+            'major' => '6',
+          },
+        },
       }
     end
     let(:params) do

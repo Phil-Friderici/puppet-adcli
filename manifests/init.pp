@@ -64,8 +64,7 @@ class adcli (
   validate_legacy(String, 'validate_string', $ad_join_os_service_pack)
 
   anchor { 'adcli::begin': }
-  -> class { '::adcli::install': }
-  -> class { '::adcli::join': }
+  -> class { 'adcli::install': }
+  -> class { 'adcli::join': }
   -> anchor { 'adcli::end': }
-
 }
