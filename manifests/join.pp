@@ -18,16 +18,16 @@ class adcli::join (
 
 ) {
   if $ad_domain == undef {
-    notify {'For Active Directory join to work you must specify the ad_domain parameter.':}
+    notify { 'For Active Directory join to work you must specify the ad_domain parameter.': }
   }
   elsif $ad_join_username == undef {
-    notify {'For Active Directory join to work you must specify the ad_join_username parameter.':}
+    notify { 'For Active Directory join to work you must specify the ad_join_username parameter.': }
   }
   elsif $ad_join_password == undef {
-    notify {'For Active Directory join to work you must specify the ad_join_password parameter.':}
+    notify { 'For Active Directory join to work you must specify the ad_join_password parameter.': }
   }
   elsif $ad_join_ou == undef {
-    notify {'For Active Directory join to work you must specify the ad_join_ou parameter.':}
+    notify { 'For Active Directory join to work you must specify the ad_join_ou parameter.': }
   }
   else {
     if $ad_join_domain_controller != undef {
@@ -36,7 +36,7 @@ class adcli::join (
       $ad_join_domain_controller_command = ''
     }
     if $ad_join_service_names != [] {
-        $ad_join_service_names_command = join([" --service-name='", join($ad_join_service_names, "' --service-name='"), "'"], '')
+      $ad_join_service_names_command = join([" --service-name='", join($ad_join_service_names, "' --service-name='"), "'"], '')
     } else {
       $ad_join_service_names_command = ''
     }
@@ -60,7 +60,7 @@ class adcli::join (
     } else {
       $ad_join_os_service_pack_command = ''
     }
-    exec {'adcli_join':
+    exec { 'adcli_join':
       command   => "/bin/echo -n \'${ad_join_password}\' | /usr/sbin/adcli join ${ad_join_domain_controller_command} \
 ${ad_join_computer_name_command} --login-user=\'${ad_join_username}\' --domain=\'${ad_domain}\' --domain-ou=\'${ad_join_ou}\' \
 --stdin-password --verbose ${ad_join_os_command} ${ad_join_os_version_command} ${ad_join_os_service_pack_command} \

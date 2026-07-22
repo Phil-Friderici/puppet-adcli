@@ -5,7 +5,6 @@
 # See README.md for more details
 #
 class adcli::install {
-
   package { 'adcli':
     ensure => present,
   }
