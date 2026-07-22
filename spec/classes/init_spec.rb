@@ -78,6 +78,11 @@ describe 'adcli' do
         ad_join_username: 'userid',
         ad_join_password: 'secret',
         ad_join_ou: 'cn=computers,dn=ad,dn=example,dn=com',
+        ad_join_domain_controller: 'dc01.example.com',
+        ad_join_computer_name: 'TEST-RHEL-76',
+        ad_join_os: 'RedHat',
+        ad_join_os_version: '7',
+        ad_join_os_service_pack: '6',
       }
     end
 
@@ -104,6 +109,11 @@ describe 'adcli' do
         ad_join_username: 'userid',
         ad_join_password: 'secret',
         ad_join_ou: 'cn=computers,dn=ad,dn=example,dn=com',
+        ad_join_domain_controller: 'dc01.example.com',
+        ad_join_computer_name: 'TEST-RHEL-67',
+        ad_join_os: 'RedHat',
+        ad_join_os_version: '6',
+        ad_join_os_service_pack: '7',
       }
     end
 
